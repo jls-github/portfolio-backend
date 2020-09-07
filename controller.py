@@ -1,6 +1,16 @@
-from flask import Flask
+from flask import Flask, jsonify
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return jsonify({
+        "route": "/"
+    })
+
+
+@app.route('/projects')
+def projects():
+    return jsonify({
+        "route": "/projects"
+    })
+
